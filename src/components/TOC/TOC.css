@@ -1,0 +1,47 @@
+.toc_container {
+    font-family: Arial, sans-serif;
+    padding: 0.625rem;
+    width: 100%;
+  }
+  
+  .toc_item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  
+  .toc_title {
+    font-size: 1rem;
+    margin: 0;
+    padding-right: 0.625rem;
+    transition: color 0.3s ease;
+  }
+  
+  .toc_line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #ccc;
+    position: relative;
+  }
+  
+  .toc_line::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: -4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+  }
+  
+  .toc_item.selected .toc_title {
+    color: #4285f4;
+    font-weight: normal;
+  }
+  
+  .toc_item.selected .toc_line,
+  .toc_item.selected .toc_line::after {
+    background-color: #4285f4;
+  }

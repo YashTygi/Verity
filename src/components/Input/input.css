@@ -1,0 +1,21 @@
+.input{
+    width: 100%;
+    border-radius: 0.75rem;
+    border: none;
+    outline: none;
+    padding: 0.75rem 0;
+
+    font-size: 1.25rem;
+    font-weight: normal;
+    padding-left: 1rem;
+
+    border: 1px solid #A6A6A6;
+
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+input::placeholder{
+    font-size: 1.25rem;
+    font-weight: normal;
+    vertical-align: center;
+}

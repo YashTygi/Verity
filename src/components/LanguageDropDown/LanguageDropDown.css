@@ -1,0 +1,43 @@
+.language-dropdown-container {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 0.625rem;
+}
+
+.language-label {
+    font-size: 1.125rem;
+    color: #5a5a5a;
+    margin-right: 0.625rem;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.language-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: transparent;
+    border: none;
+    padding-right: 1rem;
+    font-size: 1.125rem;
+    color: #5a5a5a;
+    cursor: pointer;
+}
+
+.select-wrapper::after {
+    content: '↓';
+    font-size: 1rem;
+    color: #5a5a5a;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.language-select:focus {
+    outline: none;
+}

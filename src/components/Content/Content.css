@@ -1,0 +1,49 @@
+.content_container {
+    display: flex;
+    position: relative;
+    padding: 0rem 8rem;
+  }
+  
+  .content_main_col {
+    flex: 2;
+    padding-right: 20px;
+  }
+  
+  .content_side_col {
+    flex: 0.5;
+  }
+  
+  .download-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .download-button:hover {
+    background-color: #3367d6;
+    transform: translateY(-2px);
+  }
+  
+  .download-button:active {
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 768px) {
+    .content_container {
+      flex-direction: column;
+    }
+    
+    .content_main_col, .content_side_col {
+      width: 100%;
+      padding-right: 0;
+    }
+  }

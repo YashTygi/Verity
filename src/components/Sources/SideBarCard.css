@@ -1,0 +1,91 @@
+.sources-list {
+    width: 330px;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer; 
+  }
+
+  .header h2{
+    font-size: 1.25rem;
+    font-weight: normal;
+  }
+  
+  .arrow {
+    font-size: 18px;
+    transform: rotate(0deg); 
+    transition: transform 0.3s ease;
+  }
+  
+  .arrow.collapsed {
+    transform: rotate(90deg); 
+  }
+
+  
+  .collapsible-content {
+    overflow: hidden;
+    transition: max-height 1s ease, opacity 1s ease;
+    max-height: 2000px; 
+    opacity: 1; 
+  }
+  
+  .collapsible-content.collapsed {
+    max-height: 0;
+    opacity: 0; 
+  }
+  
+  
+
+
+
+
+  
+  .source-card {
+    position: relative;
+    padding: 15px;
+    padding-right: 40px; 
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+  
+  .source-card:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .icon {
+    position: absolute;
+    bottom: 10px; 
+    right: 10px;  
+    font-size: 24px;
+  }
+  
+  .source-content {
+    flex-grow: 1;
+  }
+  
+  .source-title {
+    font-weight: 450;
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .source-title:hover {
+    text-decoration: underline;
+  }
+  
+  .source-description {
+    color: #666;
+    font-size: 0.875rem;
+    margin-top: 5px;
+  }
+  
+
