@@ -24,12 +24,6 @@ const LanguageDropDown = () => {
                     <option value="हिन्दी">हिन्दी</option>
                     <option value="मराठी">मराठी</option>
                     <option value="தமிழ்">தமிழ்</option>
-                    <option value="తెలుగు">తెలుగు</option>
-                    <option value="ಕನ್ನಡ">ಕನ್ನಡ</option>
-                    <option value="മലയാളം">മലയാളം</option>
-                    <option value="বাংলা">বাংলা</option>
-                    <option value="ਪੰਜਾਬੀ">ਪੰਜਾਬੀ</option>
-                    <option value="ગુજરાતી">ગુજરાતી</option>
                 </select>
             </div>
         </div>
