@@ -1,0 +1,125 @@
+/* SearchBar.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.greeting {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #3C77F5;
+}
+
+.search-box {
+    width: 800px;
+    position: relative;
+    border: 1px solid black; /* Black border */
+    border-radius: 24px;
+    padding: 30px 30px 60px 30px; /* Add extra space at the bottom for dropdown and toggle */
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; /* Subtle shadow */
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-bottom: 60px; /* Space below the search box */
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    border: none; /* No border for the input field */
+    border-radius: 24px; /* Rounded corners to match search box */
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Space for dropdown and toggle */
+    outline: none; /* Remove default outline on focus */
+}
+
+.sources-dropdown {
+    position: absolute;
+    bottom: 10px; /* Align with toggle */
+    left: 15px;
+    font-size: 14px;
+    background: transparent; /* Transparent background */
+    border: none; /* No border */
+    z-index: 1; /* Ensure it stays on top */
+}
+
+.sources-dropdown select {
+    border: none; /* No border */
+    background: transparent; /* Transparent background for dropdown */
+    padding: 5px;
+    font-size: 14px;
+    appearance: none; /* Remove default styling */
+    cursor: pointer; /* Show pointer cursor */
+    outline: none; /* Remove default outline on focus */
+}
+
+.sources-dropdown::after {
+    content: '^'; /* Inverted arrow symbol */
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%) rotate(180deg); /* Rotate to invert the symbol */
+    font-size: 14px; /* Match font size */
+    color: #333; /* Arrow color */
+    pointer-events: none; /* Prevent arrow from blocking clicks */
+}
+
+.case-analysis-toggle {
+    position: absolute;
+    bottom: 10px; /* Align with dropdown */
+    right: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    z-index: 1; /* Ensure it stays on top */
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Space between the slider and label */
+}
+
+.slider-container input[type="checkbox"] {
+    display: none; /* Hide the default checkbox */
+}
+
+.slider {
+    cursor: pointer;
+    border-radius: 34px;
+    background-color: #ccc; /* Default color for off state */
+    transition: .4s;
+    width: 60px;
+    height: 34px;
+    position: relative;
+}
+
+.slider::before {
+    content: "";
+    border-radius: 50%;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    position: absolute;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #3C77F5; /* Color when on */
+}
+
+input:checked + .slider::before {
+    transform: translateX(26px);
+}

@@ -1,0 +1,126 @@
+/* App.css */
+
+#app-container {
+    background-color: white; /* Fallback color */
+    background-image: url('../../assets/homebggrid.png'); /* Path to your background image */
+    background-size: cover; /* Cover the entire screen */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Fix the background image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100vh; /* Ensure full viewport height */ /* Prevent scrollbars */
+  }
+  
+  #app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh; /* Ensure the container covers the full viewport height */
+  }
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .loading-text-container {
+    position: relative;
+    font-size: 72px;
+    font-weight: bold;
+  }
+  
+  .loading-text {
+    position: relative;
+    color: transparent;
+    -webkit-text-stroke: 2px #333;
+    text-stroke: 2px #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .loading-text::before {
+    content: 'Verity...';
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: black;
+    -webkit-text-stroke: 0;
+    text-stroke: 0;
+    clip-path: inset(100% 0 0 0);
+    animation: fill-up 2s linear infinite;
+  }
+  
+  /* Fix for the 'e' */
+  .loading-text::after {
+    position: absolute;
+    left: 1.15em;  /* Adjust this value to position the 'e' correctly */
+    color: transparent;
+    -webkit-text-stroke: 2px #333;
+    text-stroke: 2px #333;
+  }
+  
+  @keyframes fill-up {
+    0% {
+      clip-path: inset(100% 0 0 0);
+    }
+    100% {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+  
+  .hide-during-loading {
+    display: none;
+  }
+  
+  
+  /* Ensure that the content (Recent News & History) aligns side by side */
+  .content-section {
+    display: flex;
+    justify-content: space-between;
+    width: 85%; /* Adjust to fit within your design */
+    margin-top: 30px;
+  }
+  
+  .recent-news, .history {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Even shadow on all sides */
+    overflow-y: auto;
+    height: auto;
+    border: 1px solid black; /* Border if needed */
+  }
+  
+  
+  /* Adjust sizes: give Recent News more space than History */
+  .recent-news {
+    flex: 2; /* Adjust to give it more or less space */
+    max-width: 70%; /* Ensure it doesn’t exceed 70% of the container's width */
+  }
+  
+  .history {
+    flex: 1;
+    max-height: 400px;
+    margin-left: 20px; /* Space between the two sections */
+  }
+  
+  /* Adjust for smaller screens */
+  @media (max-width: 768px) {
+    .content-section {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .recent-news, .history {
+      margin-bottom: 20px;
+    }
+  }

@@ -8,6 +8,7 @@ import { multilingualContentData } from '../../data/content';
 import { generatePDF } from '../../utils/pdfGenerator';
 
 const Content = () => {
+
   const { answerPriority, language } = useStore();
   const [orderedTitles, setOrderedTitles] = useState(['RAG Based', 'Web Based', 'Case Analysis']);
 
@@ -24,6 +25,7 @@ const Content = () => {
 
   return (
     <div className="content_container">
+
       <div className="content_main_col">
         {orderedTitles.map(title => (
           <Response key={title} title={title} text={multilingualContentData[language][title]} />
