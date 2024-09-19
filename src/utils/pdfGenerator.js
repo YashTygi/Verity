@@ -2,8 +2,52 @@
 import { jsPDF } from "jspdf";
 
 const addFormatting = (doc, text, yOffset) => {
-  // ... (keep the existing addFormatting function)
-};
+    const lines = text.split('\n');
+    lines.forEach((line) => {
+      if (line.startsWith('# ') || line.startsWith('#')) {
+        doc.setFontSize(18);
+        doc.setFont('helvetica', 'bold');
+        doc.text(line.slice(2), 20, yOffset);
+        yOffset += 10;
+      } else if (line.startsWith('## ') || line.startsWith('##')) {
+        doc.setFontSize(16);
+        doc.setFont('helvetica', 'bold');
+        doc.text(line.slice(3), 20, yOffset);
+        yOffset += 8;
+      } else if (line.startsWith('- ') || line.startsWith('-')) {
+        doc.setFontSize(12);
+        doc.setFont('helvetica', 'normal');
+        doc.text('•', 20, yOffset);
+        doc.text(line.slice(2), 25, yOffset);
+        yOffset += 6;
+      } else if (line.match(/^\d+\./)) {
+        doc.setFontSize(12);
+        doc.setFont('helvetica', 'normal');
+        const [number, ...rest] = line.split(' ');
+        doc.text(number, 20, yOffset);
+        doc.text(rest.join(' '), 30, yOffset);
+        yOffset += 6;
+      } else if (line.trim().startsWith('[') && line.includes('](')) {
+        doc.setFontSize(12);
+        doc.setFont('helvetica', 'normal');
+        const [linkText, url] = line.match(/\[(.?)\]\((.?)\)/).slice(1);
+        doc.textWithLink(linkText, 20, yOffset, { url });
+        yOffset += 6;
+      } else if (line.trim()) {
+        doc.setFontSize(12);
+        doc.setFont('helvetica', 'normal');
+        const textLines = doc.splitTextToSize(line, 170);
+        doc.text(textLines, 20, yOffset);
+        yOffset += 6 * textLines.length;
+      }
+  
+      if (yOffset > 280) {
+        doc.addPage();
+        yOffset = 20;
+      }
+    });
+    return yOffset;
+  };
 
 const addSources = (doc, sources, language) => {
   let yOffset = 20;
@@ -14,7 +58,24 @@ const addSources = (doc, sources, language) => {
   yOffset += 10;
 
   sources.forEach((source, index) => {
-    // ... (keep the existing source formatting)
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'bold');
+    doc.text(${index + 1}. ${source.title}, 20, yOffset);
+    yOffset += 6;
+
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'normal');
+    const descriptionLines = doc.splitTextToSize(source.description, 170);
+    doc.text(descriptionLines, 20, yOffset);
+    yOffset += 6 * descriptionLines.length;
+
+    doc.textWithLink(source.link, 20, yOffset, { url: source.link });
+    yOffset += 10;
+
+    if (yOffset > 280) {
+      doc.addPage();
+      yOffset = 20;
+    }
   });
 };
 
