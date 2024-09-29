@@ -25,7 +25,7 @@
     position: relative;
     border: 1px solid black; /* Black border */
     border-radius: 24px;
-    padding: 30px 30px 60px 30px; /* Add extra space at the bottom for dropdown and toggle */
+    padding: 15px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; /* Subtle shadow */
     background-color: #fff;
     box-sizing: border-box;
@@ -33,13 +33,16 @@
 }
 
 .search-input {
+
     width: 100%;
     padding: 15px;
     font-size: 20px;
+    resize: vertical;
+    height: fit-content;
     border: none; /* No border for the input field */
-    border-radius: 24px; /* Rounded corners to match search box */
+    border-radius: 4px; /* Rounded corners to match search box */
     box-sizing: border-box;
-    margin-bottom: 10px; /* Space for dropdown and toggle */
+    margin-bottom: 2rem; /* Space for dropdown and toggle */
     outline: none; /* Remove default outline on focus */
 }
 

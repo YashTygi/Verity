@@ -15,8 +15,10 @@ const SearchBar = ({ onKeyDown }) => {  // Ensure onKeyDown is passed correctly
         Good morning, <span className="highlight">Yash!</span>
       </h2>
       <div className="search-box">
-        <input
+        <textarea
           className="search-input"
+          rows="1"
+          cols="30"
           type="text"
           placeholder="What are you looking for?"
           onKeyDown={onKeyDown} // Trigger the onKeyDown function
